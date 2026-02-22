@@ -1,0 +1,6 @@
+venv/
+Test_Music/
+__pycache__/
+*.keras
+*.h5
+
