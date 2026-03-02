@@ -8,7 +8,7 @@ import gdown
 from tensorflow.image import resize
 
 
-# ---------------- MODEL DOWNLOAD + LOAD ---------------- #
+# MODEL DOWNLOAD + LOAD 
 
 @st.cache_resource()
 def load_model():
@@ -25,7 +25,7 @@ def load_model():
     return model
 
 
-# ---------------- PREPROCESS FUNCTION ---------------- #
+# PREPROCESS FUNCTION 
 
 def load_and_preprocess_data(file_path, target_shape=(150, 150)):
 
@@ -70,7 +70,7 @@ def load_and_preprocess_data(file_path, target_shape=(150, 150)):
     return np.array(data)
 
 
-# ---------------- PREDICTION FUNCTION ---------------- #
+# PREDICTION FUNCTION
 
 def model_prediction(X_test):
 
@@ -85,7 +85,7 @@ def model_prediction(X_test):
     return unique_elements[np.argmax(counts)]
 
 
-# ---------------- GLOBAL STYLE ---------------- #
+# GLOBAL STYLE 
 
 st.markdown("""
 <style>
@@ -136,7 +136,7 @@ section[data-testid="stSidebar"] div[data-baseweb="select"] > div {
 """, unsafe_allow_html=True)
 
 
-# ---------------- SIDEBAR ---------------- #
+# SIDEBAR 
 
 st.sidebar.title("Dashboard")
 app_mode = st.sidebar.selectbox(
@@ -144,7 +144,7 @@ app_mode = st.sidebar.selectbox(
 )
 
 
-# ---------------- HOME PAGE ---------------- #
+# HOME PAGE 
 
 if app_mode == "Home":
 
@@ -173,7 +173,7 @@ if app_mode == "Home":
         )
 
 
-# ---------------- ABOUT PAGE ---------------- #
+# ABOUT PAGE 
 
 elif app_mode == "About Project":
 
@@ -200,7 +200,7 @@ elif app_mode == "About Project":
     """)
 
 
-# ---------------- PREDICTION PAGE ---------------- #
+# PREDICTION PAGE 
 
 elif app_mode == "Prediction":
 
